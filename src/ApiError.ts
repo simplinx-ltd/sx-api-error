@@ -11,7 +11,7 @@ export class ApiError extends Error {
     public status: number;
     public isOperational: boolean;
 
-    constructor(errDesc: ApiErrorDescription) {
+    public constructor(errDesc: ApiErrorDescription) {
         super(errDesc.message);
         this.name = errDesc.name;
         this.message = errDesc.message;

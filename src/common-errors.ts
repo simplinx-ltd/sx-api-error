@@ -11,7 +11,6 @@ export const commonErrors = {
         status: 401,
         isOperational: true,
     },
-
     ECREATE_LIMIT: {
         name: 'ECREATE_LIMIT',
         message: 'Can not create more records. Limit Error',
@@ -22,6 +21,13 @@ export const commonErrors = {
     EFOUND_LIMIT: {
         name: 'EFOUND_LIMIT',
         message: 'Query returns too many records. Limit Error.',
+        status: 400,
+        isOperational: true,
+    },
+
+    ERECORD_NOT_FOUND: {
+        name: 'ERECORD_NOT_FOUND',
+        message: 'Record not found!',
         status: 400,
         isOperational: true,
     },
@@ -110,7 +116,6 @@ export const commonErrors = {
         isOperational: true,
     },
 
-    //Murat beye burayı sor
     EUNKNOWN_ERROR: {
         name: 'EUNKNOWN_ERROR',
         message: 'Unknown Error Occured',

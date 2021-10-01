@@ -23,6 +23,12 @@ export declare const commonErrors: {
         status: number;
         isOperational: boolean;
     };
+    ERECORD_NOT_FOUND: {
+        name: string;
+        message: string;
+        status: number;
+        isOperational: boolean;
+    };
     EONLY_OWN_RECORD: {
         name: string;
         message: string;

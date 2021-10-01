@@ -1,9 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
-import { ApiError, ApiErrorDescription } from './ApiError';
+import { ApiError } from './ApiError';
 import { createFromSequelizeError } from './sequelize-error';
+import * as Debug from 'debug';
+const debug = Debug('sx-api-error: error-middleware');
 
 export function globalErrorHandler(
-    err: Error | ApiErrorDescription,
+    err: Error | ApiError,
     req: Request,
     res: Response,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -28,10 +30,11 @@ export function globalErrorHandler(
         }
     }
 
-    // if (!apiError.isOperational) {
-    // }
+    if (!apiError.isOperational) {
+        console.error(apiError.stack);
+    }
 
-    console.error(apiError.stack);
+    debug(apiError.stack);
 
     return res.status(apiError.status).json({ name: apiError.name, message: apiError.message });
 }

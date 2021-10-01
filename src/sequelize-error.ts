@@ -1,4 +1,3 @@
-import { ApiErrorDescription } from './ApiError';
 import { getBaseClassNames } from './get-base-class';
 
 export function createFromSequelizeError(err: Error): Error {
